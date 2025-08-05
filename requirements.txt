@@ -1,0 +1,10 @@
+pandas
+sqlalchemy
+boto3
+psycopg2-binary
+streamlit
+scikit-learn
+prophet
+dbt-core
+dbt-postgres
+plotly

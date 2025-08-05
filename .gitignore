@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+*.egg-info/
+
+# Environment variable files
+.env
+.env.*
+
+# VS Code & PyCharm
+.vscode/
+.idea/
+
+# Python profiling/debugging
+*.log
+*.prof
+*.pid
+
+# Output files
+*.out
+*.bak
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.tar
+*.img
+*.container
+docker-compose.override.yml
+
+# dbt specific
+dbt_modules/
+dbt_packages/
+target/
+logs/
+
+# Prophet, matplotlib, and Plotly cache
+__pycache__/
+prophet_cache/
+plotly-cache/
+
+# Pip and poetry
+poetry.lock
+Pipfile.lock
+
+# Streamlit
+.streamlit/
+
+# Compiled data files or temporary CSVs
+
+*.db
+*.sqlite
+
+# Test predictions or forecast outputs if temporary
+test_predictions.csv
+forecast.csv
+model_metrics.csv
+
+# Secret keys
+secrets.json

@@ -1,0 +1,22 @@
+Analysis Insights:
+
+Data Description: Each row represents a charging session with details like Session ID, Charger ID, Seller ID, Minutes charged, Watt hours charged, Start time, and Stop time.
+
+Data Cleaning: Removed invalid values (future start times, negative watt hours) and populated missing end times.
+
+Transformation: Raw data is converted into hourly time series.
+
+Seasonality: Weekly patterns observed; highest demand on Mondays, weekdays higher than weekends.
+
+Feature Engineering: Created variables from DATETIME field:
+    - day_of_week (0-6)
+    - hour_of_day (0-23)
+    - is_weekend (binary)
+
+Machine Learning: Data split 80:20 for training/testing. Models used:
+    - Decision Tree Regressor
+    - Random Forest
+    - Gradient Boosting
+    - Neural Networks (with grid search)
+    
+Evaluation: Models evaluated using RMSE and R-square. Best model forecasts next week's energy consumption. Results available in the dashboard.

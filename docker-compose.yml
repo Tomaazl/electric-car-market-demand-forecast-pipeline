@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: dbtuser
+      POSTGRES_PASSWORD: dbtpass
+      POSTGRES_DB: dbtdb
+    ports:
+      - "5433:5432"
+
+  dbt:
+    build: .
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - DBT_USER=dbtuser
+      - DBT_PASSWORD=dbtpass
+      - DBT_HOST=postgres
+    command: >
+      bash -c "
+        sleep 10 &&
+        python scripts/load_data.py &&
+        dbt run --profiles-dir dbt_project &&
+        python scripts/train_model.py"
+
+  dashboard:
+    build:
+      context: .
+    depends_on:
+      - postgres
+    ports:
+      - "8501:8501"
+    command: ["streamlit", "run", "dashboard/app.py"]
