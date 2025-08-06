@@ -10,7 +10,9 @@ A full-stack time series forecasting pipeline for hourly energy consumption. The
 - Trains and validates several ML models, compares them and selects the best model to forecast the time series data
 - Loads model predictions and their evaluatin metrics to PostgreSQL
 - Forecasts 7-day hourly energy usage using the selected best model
-- Visualizes with Streamlit
+- Visualizes with Streamlit, compares and scores the models
+
+![Visualization of Forecast Results in Streamlit](visualization.png)
 
 ## Setup
 Boot up the database and dashboard with
